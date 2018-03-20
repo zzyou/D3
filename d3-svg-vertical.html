@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <svg></svg>
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+        <script>
+            const data = [4, 8, 15, 16, 23, 42];
+            const colors = ["violet", "lightblue", "limegreen", "yellow", "orange", "red"];
+            const width = 500,
+                height = 16;
+            const x = d3.scaleLinear()
+                        .domain([0, d3.max(data)])
+                        .range([0, width]);
+
+            const g = d3.select("svg")
+                .attr("height", width)
+                .attr("width", height * data.length)
+                .selectAll("g")
+                .data(data)
+                .enter().append("g")
+                .attr("transform", function(d, i) { return "translate(" + i * height + ", " + (width - x(d)) + ")"; });
+            g.append("rect")
+            .attr("fill", function(d) { return colors[data.indexOf(d)]; })
+            .attr("height", x)
+            .attr("width", height);
+            g.append("text")
+            .attr("x", 0)
+            .attr("y", x)
+            .attr("dy", "-0.35em")
+            .text(function(d) { return d; });
+
+        </script>
+    </body>
+</html>
