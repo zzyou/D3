@@ -17,8 +17,8 @@
                 height = 16;
             // D3's linear scaling method to convert data into chart width proportion
             const x = d3.scaleLinear()
-            .domain([0, d3.max(data)])
-            .range([0, width]);
+                        .domain([0, d3.max(data)])
+                        .range([0, width]);
             // D3 creating div elements using selection
             // We feed in the data, dimensions and style using D3's methods
             d3.select(".chart")
