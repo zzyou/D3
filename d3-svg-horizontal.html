@@ -16,7 +16,7 @@
             const width = 500,
                 height = 16;
 
-            const x = d3.scaleLinear()
+            const scaledData = d3.scaleLinear()
                         .domain([0, d3.max(data)])
                         .range([0, width]);
 
@@ -33,9 +33,9 @@
             // Create each bar using rect and text elements
             g.append("rect")
             .attr("fill", function(d) { return colors[data.indexOf(d)]; })
-            .attr("width", x)
+            .attr("width", scaledData)
             .attr("height", height);
-            
+
             g.append("text")
             .attr("x", 0)
             .attr("y", height / 2)
