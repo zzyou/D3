@@ -10,12 +10,16 @@
 
         <script>
             const data = [4, 8, 15, 16, 23, 42];
+
             const colors = ["violet", "lightblue", "limegreen", "yellow", "orange", "red"];
+
             const width = 500,
                 height = 16;
+
             const x = d3.scaleLinear()
                         .domain([0, d3.max(data)])
                         .range([0, width]);
+
             // Create SVG element
             // We will group each rect and corresponding text in a group (g)
             const g = d3.select("svg")
@@ -25,11 +29,13 @@
                         .data(data)
                         .enter().append("g")
                         .attr("transform", function(d, i) { return "translate(0," + i * height + ")"; });
+            
             // Create each bar using rect and text elements
             g.append("rect")
             .attr("fill", function(d) { return colors[data.indexOf(d)]; })
             .attr("width", x)
             .attr("height", height);
+            
             g.append("text")
             .attr("x", 0)
             .attr("y", height / 2)

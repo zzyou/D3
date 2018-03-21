@@ -10,15 +10,19 @@
 
         <script>
             const data = [4, 8, 15, 16, 23, 42];
+
             // define colors for each bar
             const colors = ["violet", "lightblue", "limegreen", "yellow", "orange", "red"];
+
             // max dimensions for each bar
             const width = 500,
                 height = 16;
+
             // D3's linear scaling method to convert data into chart width proportion
             const x = d3.scaleLinear()
                         .domain([0, d3.max(data)])
                         .range([0, width]);
+
             // D3 creating div elements using selection
             // We feed in the data, dimensions and style using D3's methods
             d3.select(".chart")
@@ -31,6 +35,7 @@
             .style("height", height + "px")
             .style("background-color", function(d) { return colors[data.indexOf(d)]; })
             .text(function(d) { return d; });
+            
         </script>
     </body>
 </html>

@@ -28,7 +28,6 @@
                 .enter()
                 .append("g")
                 .attr("transform", function(d, i) {
-                    // console.log([d, i]);
                     return "translate(" + i * width + ", " + (height - scaledData(d)) + ")"; 
                     });
 
