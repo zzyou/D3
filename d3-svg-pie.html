@@ -30,8 +30,8 @@
                            .innerRadius(0);
 
             const label = d3.arc()
-                            .outerRadius(radius - 10)
-                            .innerRadius(0);
+                            .outerRadius(radius - 40)
+                            .innerRadius(radius - 40);
 
             const arc = g.selectAll(".arc")
                         .data(pie(data))
