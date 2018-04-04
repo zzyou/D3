@@ -30,7 +30,8 @@
             // data() method takes a data set and passes 'd' when chaining methods together
             .data(data)
             // enter() method matches the data being handed with the DOM elements by creating new elements
-            .enter().append("div")
+            .enter()
+            .append("div")
             .style("width", function(d) { return x(d) + "px"; })
             .style("height", height + "px")
             .style("background-color", function(d) { return colors[data.indexOf(d)]; })
