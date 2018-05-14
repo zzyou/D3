@@ -27,7 +27,8 @@
                         .attr("height", height * data.length)
                         .selectAll("g")
                         .data(data)
-                        .enter().append("g")
+                        .enter()
+                        .append("g")
                         .attr("transform", function(d, i) { return "translate(0," + i * height + ")"; });
             
             // Create each bar using rect and text elements
