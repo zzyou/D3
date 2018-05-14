@@ -36,7 +36,8 @@
 
             const arc = g.selectAll(".arc")
                         .data(pie(data))
-                        .enter().append("g")
+                        .enter()
+                        .append("g")
                         .attr("class", "arc");
 
             arc.append("path")
